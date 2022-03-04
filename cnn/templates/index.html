@@ -1,0 +1,39 @@
+<div class="bg">
+{% extends 'header.html' %}
+{% block content%}
+
+    <h2 class="header1">Image Classification</h2>
+
+    
+    <br>
+   
+    <form class="form" method="post" enctype="multipart/form-data" action="predictImage">
+  
+ {% csrf_token %}
+        <div class="hh">
+            <div class="col-md-4 col-sm-4">
+     <label for="fname">Upload Your File:</label>
+ </div>
+        <input id="fname" name="myPath" type="file"><br><br>
+ <br>
+
+
+ <input type="submit" value="Submit" >
+        </div>
+
+<div class="hh2">
+     <h2>This is {{classPrediction}}</h2>
+    <div class="imge">
+ <img src={{pathName}} alt='imagename'>
+        <div class="path">
+ {{pathName}}
+        </div>
+    </div>
+</div>
+</form>
+<br>
+
+
+{% endblock %}
+
+</div>
